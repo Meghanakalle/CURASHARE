@@ -109,8 +109,6 @@ CuraShare provides dedicated authentication portals for different platform parti
 
 **TypeScript is the primary programming language used throughout CuraShare.**
 
-The GitHub language detector reports approximately **99.7% TypeScript** because the majority of the application's source code is written in `.ts` and `.tsx` files. React, Node.js, Express, Three.js, and Recharts are libraries/frameworks rather than separate programming languages.
-
 ---
 
 # 🏗️ Application Architecture
