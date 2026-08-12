@@ -1,146 +1,337 @@
 # 💊 CuraShare — AI-Powered Surplus Medicine Redistribution Network
 
-> **Slogan:** *Share today, Heal tomorrow.*  
+> **Slogan:** *Share today, Heal tomorrow.*
 > **Tagline:** *Powered by AI. Driven by Care.*
 
-CuraShare is a comprehensive full-stack healthcare platform engineered to bridge the gap between unexpired surplus medicines and patients in critical need. By leveraging AI-powered Optical Character Recognition (OCR), smart 24/7 IoT kiosks (**CuraBox**), real-time map tracking, and verified Google/Gmail authentication, CuraShare ensures that life-saving medications reach underprivileged individuals safely, transparently, and efficiently.
+CuraShare is a full-stack healthcare platform designed to connect **unexpired surplus medicines with verified patients who need them**. The platform combines AI-assisted medicine and prescription processing, smart **CuraBox** kiosk concepts, location-based matching, delivery coordination, and role-based authentication to make medicine redistribution safer, more transparent, and more accessible.
 
 ---
 
-## 🔗 Link to Live Website
+## 🔗 Live Website
 
-https://curaashare.netlify.app/
-
---- 
-## 🌟 Key Platform Features & Architecture
-
-### 1. 🎨 Visual Branding & Animated Experience
-* **Custom CuraShare Logo**: A medical branding logo featuring two supportive hands forming a circular embrace around a teal and blue heart with a capsule pill inside, topped with a green leaf sprout.
-* **App Startup Splash Screen**: An animated startup loader showcasing the CuraShare branding, real-time network initialization progress, status messages, and a skip option.
-* **Interactive Cursor Sparkles**: An interactive particle canvas generating subtle 4-point star sparkles in emerald, cyan, and purple as the user moves their cursor or touches the screen.
-* **Dark Mode Grid Canvas**: High-contrast, dark mesh grid canvas (`#020617`) with radial emerald, cyan, and purple ambient glow gradients.
+**https://curaashare.netlify.app/**
 
 ---
 
-### 2. 🔑 Enhanced Google OAuth & Email Authentication
-All five role-specific login portals feature secure authentication mechanisms:
-* **Google OAuth Button**: One-click *"Continue with Google"* integration for fast, secure sign-in.
-* **Valid Email Validation**: Strict regex validation enforcing proper email formats (e.g. `name@gmail.com`).
-* **Role Portals**:
-  1. **Medicine Donor Portal**: For households and individuals donating unexpired surplus medicines.
-  2. **Patient & Beneficiary Portal**: For patients requesting medicines or verifying prescriptions.
-  3. **Pharmacy Partner Portal**: For verified pharmacies managing surplus stock and verifying medicine quality.
-  4. **NGO & Fleet Partner Portal**: For logistics drivers and NGO teams managing medicine pickups and deliveries.
-  5. **System Admin Command Center**: For system administrators monitoring live network telemetry, audit logs, and analytics.
+## 🌟 Key Platform Features
+
+### 1. 🎨 Visual Branding & Interactive Experience
+
+* **Custom CuraShare Logo** — Healthcare-focused branding featuring supportive hands, a heart, medicine capsule, and leaf motif.
+* **Animated Splash Screen** — Branded startup experience with loading status and skip functionality.
+* **Interactive Cursor Sparkles** — Canvas-based particle effects responding to cursor/touch movement.
+* **Dark Healthcare UI** — Modern dark interface with grid patterns, gradients, and responsive layouts.
+* **Responsive Design** — Interface designed for desktop and mobile screen sizes.
 
 ---
 
-### 3. 📦 Multi-Role Dashboard Capabilities
+### 2. 🔑 Role-Based Authentication
 
-#### 🟢 Donor Dashboard
-* **AI Medicine Strip OCR Scanner**: Upload images of medicine strips for automatic detection of Medicine Name, Expiry Date, Batch Number, and Manufacturer.
-* **Proof-of-Donation Upload**: Upload images of medicine packages or purchase receipts before submission.
-* **Donation History & Rewards**: Track donated items, environmental impact metrics, and earn donor badges.
+CuraShare provides dedicated authentication portals for different platform participants.
 
-#### 🔵 Patient Dashboard
-* **Prescription Verification**: Upload doctor prescription images for AI validation and matching with verified pharmacy stock.
-* **Medicine Search & Request**: Search available medicines by city or name and request direct delivery or kiosk pickup.
-* **3D CuraBox Kiosk Dispenser**: Interactive 3D Three.js simulation of the temperature-monitored smart dispensing kiosk.
+* **Google Authentication UI** — Google sign-in integration/interface.
+* **Email Validation** — Client-side email format validation.
+* **Role-Based Portals:**
 
-#### 🏢 Pharmacy Partner Dashboard
-* **Stock Upload & Verification**: Upload bulk inventory images and verify donated medicine batches.
-* **Real-time Demand Matching**: Match incoming patient requests with available pharmacy stock.
+  1. **Medicine Donor** — Individuals and households donating eligible surplus medicines.
+  2. **Patient / Beneficiary** — Patients searching for and requesting medicines.
+  3. **Pharmacy Partner** — Pharmacies managing medicine inventory and verification.
+  4. **NGO / Delivery Partner** — Partners coordinating pickups and deliveries.
+  5. **System Administrator** — Administrators monitoring platform activity and analytics.
 
-#### 🚚 NGO & Fleet Partner Dashboard
-* **Interactive Pickup & Delivery Map**: Route optimization for collecting donated medicines from CuraBoxes or donors and delivering them to patients.
-* **Live Route Status**: Real-time status updates from *Assigned* to *Picked Up* to *Delivered*.
-
-#### ⚙️ Admin Command Center
-* **Live Network Telemetry**: View total medicines redistributed, active kiosks, verified pharmacies, and total patients served.
-* **Recharts Analytics**: Interactive charts showing monthly redistribution volume and distribution by therapeutic category.
+> **Note:** Authentication and external service integrations should be configured with the required environment variables before production deployment.
 
 ---
 
-## 🛠️ Technology Stack
+## 📦 Multi-Role Dashboards
 
-| Layer | Technology / Library |
-| :--- | :--- |
-| **Frontend Framework** | React 19, TypeScript, Vite |
-| **Styling & Effects** | Tailwind CSS v4, HTML5 Canvas Particle Engine |
-| **3D Simulation** | Three.js (`@types/three`) |
-| **Data Visualization** | Recharts |
-| **Iconography** | Lucide React |
-| **Backend Runtime** | Node.js, Express 4, `tsx` |
-| **Build & Bundle** | Vite, `esbuild` |
+### 🟢 Donor Dashboard
+
+* **Medicine Image Scanner Interface** — Upload medicine images for medicine information extraction.
+* **Medicine Details** — Capture medicine name, expiry date, batch number, and manufacturer information.
+* **Proof-of-Donation Upload** — Upload supporting medicine/package images.
+* **Donation History** — Track submitted donations and their status.
+* **Impact & Rewards** — Display contribution and community-impact metrics.
+
+### 🔵 Patient Dashboard
+
+* **Prescription Upload** — Upload prescription images for verification workflows.
+* **Medicine Search** — Search available medicines by name and location.
+* **Medicine Request** — Submit requests for available medicines.
+* **Delivery / Pickup Options** — Support delivery or CuraBox pickup workflows.
+* **3D CuraBox Simulation** — Interactive Three.js representation of the smart medicine kiosk.
+
+### 🏢 Pharmacy Partner Dashboard
+
+* **Inventory Management** — Manage available medicine stock.
+* **Medicine Verification** — Review medicine information and submitted batches.
+* **Demand Matching** — Match medicine availability with patient requests.
+
+### 🚚 NGO & Delivery Partner Dashboard
+
+* **Pickup & Delivery Management** — Manage medicine collection and delivery workflows.
+* **Interactive Map Interface** — Visualize pickup and delivery locations.
+* **Delivery Status** — Track stages such as:
+
+  * Assigned
+  * Picked Up
+  * In Transit
+  * Delivered
+
+### ⚙️ Admin Command Center
+
+* **Network Metrics** — Monitor medicines, patients, pharmacies, partners, and platform activity.
+* **Analytics Dashboard** — Visualize redistribution and platform statistics.
+* **Operational Monitoring** — Provide administrators with centralized platform information.
 
 ---
 
-## 🚀 How to Run the Application
+# 🛠️ Technology Stack
 
-### Prerequisites
-* **Node.js**: v18.0.0 or higher
-* **npm** or **bun** package manager
+| Layer                  | Technology / Library |
+| :--------------------- | :------------------- |
+| **Primary Language**   | TypeScript           |
+| **Frontend Framework** | React 19             |
+| **Frontend Tooling**   | Vite                 |
+| **Styling**            | Tailwind CSS v4, CSS |
+| **Web Markup**         | HTML5                |
+| **Backend Runtime**    | Node.js              |
+| **Backend Framework**  | Express 4            |
+| **TypeScript Runtime** | `tsx`                |
+| **3D Visualization**   | Three.js             |
+| **Data Visualization** | Recharts             |
+| **Icons**              | Lucide React         |
+| **Canvas Effects**     | HTML5 Canvas         |
+| **Production Build**   | Vite, esbuild        |
+| **Package Management** | npm / Bun            |
 
-### 1. Install Dependencies
+### Programming Language
+
+**TypeScript is the primary programming language used throughout CuraShare.**
+
+The GitHub language detector reports approximately **99.7% TypeScript** because the majority of the application's source code is written in `.ts` and `.tsx` files. React, Node.js, Express, Three.js, and Recharts are libraries/frameworks rather than separate programming languages.
+
+---
+
+# 🏗️ Application Architecture
+
+```text
+                    ┌──────────────────────────┐
+                    │       CuraShare UI       │
+                    │   React + TypeScript     │
+                    └────────────┬─────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │                  │                  │
+              ▼                  ▼                  ▼
+       Authentication       Dashboards         Visualizations
+       Google / Email       Role-based UI      Three.js / Charts
+              │                  │                  │
+              └──────────────────┼──────────────────┘
+                                 ▼
+                    ┌──────────────────────────┐
+                    │      Service Layer       │
+                    │    API / Application     │
+                    │       Services           │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │     Node.js + Express     │
+                    │       server.ts           │
+                    └──────────────────────────┘
+```
+
+---
+
+# 🚀 How to Run the Application
+
+## Prerequisites
+
+* **Node.js:** v18.0.0 or higher
+* **npm** or **Bun**
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/Meghanakalle/CuraShare.git
+cd CuraShare
+```
+
+## 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
-### 2. Start Development Server
-Runs the Express backend server with `tsx` which handles the Vite middleware on port 3000:
+## 3. Configure Environment Variables
+
+Create a local `.env` file based on `.env.example`.
+
+```bash
+cp .env.example .env
+```
+
+On Windows PowerShell, you can also use:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Add the required API keys and configuration values to `.env`.
+
+**Never commit `.env` to GitHub.**
+
+## 4. Start Development Server
+
 ```bash
 npm run dev
 ```
-Open your browser and navigate to:
-`http://localhost:3000`
 
-### 3. Build for Production
-Compiles the Vite frontend assets and bundles `server.ts` using `esbuild` into CommonJS format inside `dist/server.cjs`:
+The application runs at:
+
+```text
+http://localhost:3000
+```
+
+## 5. Build for Production
+
 ```bash
 npm run build
 ```
 
-### 4. Start Production Server
-Executes the bundled production server:
+This builds the frontend and bundles the server using the project's configured build process.
+
+## 6. Start Production Server
+
 ```bash
 npm run start
 ```
 
 ---
 
-## 📁 Directory Structure Overview
+# 📁 Project Structure
 
-```
+```text
 CuraShare/
-├── README.md                   # Root documentation file
+├── README.md
+├── .env.example
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package.json
+├── package-lock.json
+├── bun.lock
+├── server.ts
+├── tsconfig.json
+├── vite.config.ts
+│
 ├── src/
-│   ├── assets/                 # App assets & generated CuraShare logos
-│   ├── components/             # Reusable UI components
-│   │   ├── CuraBox3D.tsx       # 3D Three.js Smart Kiosk
-│   │   ├── CuraShareLogo.tsx   # Custom CuraShare Logo component
-│   │   ├── CursorSparkles.tsx  # Particle cursor sparkle canvas
-│   │   ├── GoogleAuthButton.tsx# Google OAuth sign-in component
-│   │   ├── InteractiveMap.tsx  # Leaflet/SVG interactive map
-│   │   ├── Navbar.tsx          # Navigation header with notification drawer
-│   │   ├── Footer.tsx          # Platform footer
-│   │   └── SplashScreen.tsx    # Animated app loading screen
-│   ├── pages/                  # Portal pages
-│   │   ├── AuthPortal.tsx      # Multi-role authentication selector
-│   │   ├── LandingPage.tsx     # Main home landing view
-│   │   ├── DonorDashboard.tsx   # Donor portal
-│   │   ├── PatientDashboard.tsx # Patient portal
-│   │   ├── PharmacyDashboard.tsx# Pharmacy portal
-│   │   ├── NGODashboard.tsx    # NGO fleet portal
-│   │   ├── AdminDashboard.tsx  # Admin command center
-│   │   └── auth/               # Role-specific auth portals (Gmail validated)
-│   ├── services/               # Mock API services & OCR parsers
-│   └── types.ts                # TypeScript interfaces & types
-├── package.json                # Dependencies & scripts configuration
-├── server.ts                   # Express server entry point with Vite middleware
-└── vite.config.ts              # Vite configuration
+│   ├── assets/
+│   │   └── images/
+│   │       └── curashare_logo_1786035662096.jpg
+│   │
+│   ├── components/
+│   │   ├── CuraBox3D.tsx
+│   │   ├── CuraShareLogo.tsx
+│   │   ├── CursorSparkles.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GoogleAuthButton.tsx
+│   │   ├── InteractiveMap.tsx
+│   │   ├── Navbar.tsx
+│   │   └── SplashScreen.tsx
+│   │
+│   ├── pages/
+│   │   ├── AboutPage.tsx
+│   │   ├── AdminDashboard.tsx
+│   │   ├── AuthPortal.tsx
+│   │   ├── DeliveryDashboard.tsx
+│   │   ├── DonorDashboard.tsx
+│   │   ├── LandingPage.tsx
+│   │   ├── MedicineSearchPage.tsx
+│   │   ├── PatientDashboard.tsx
+│   │   ├── PharmacyDashboard.tsx
+│   │   │
+│   │   └── auth/
+│   │       ├── AdminAuth.tsx
+│   │       ├── DonorAuth.tsx
+│   │       ├── NGOAuth.tsx
+│   │       ├── PatientAuth.tsx
+│   │       └── PharmacyAuth.tsx
+│   │
+│   ├── services/
+│   │   └── api.ts
+│   │
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── types.ts
+│
+└── ...
 ```
 
 ---
 
-## 💚 Vision & Social Impact
-Over **$100 Billion** worth of unexpired, life-saving medicines are discarded globally every year while millions of low-income families struggle to afford essential prescriptions. **CuraShare** turns waste into wellness by connecting generous donors with verified beneficiaries through intelligent technology, transparent tracking, and community care.
+# 🔄 Core CuraShare Workflow
+
+```text
+Donor
+  │
+  ▼
+Medicine Information / Image
+  │
+  ▼
+Eligibility & Verification
+  │
+  ▼
+Available Medicine Network
+  │
+  ├───────────────┐
+  ▼               ▼
+Patient         Pharmacy
+Request         Partner
+  │               │
+  └───────┬───────┘
+          ▼
+   Matching & Approval
+          │
+          ▼
+   NGO / Delivery Partner
+          │
+          ▼
+   Patient / CuraBox
+```
+
+---
+
+# 💚 Vision & Social Impact
+
+CuraShare aims to reduce the gap between **surplus medicines and patients who cannot easily access essential medication**.
+
+The platform focuses on:
+
+* ♻️ Reducing avoidable medicine wastage
+* 💊 Improving access to eligible surplus medicines
+* 🏥 Connecting donors, pharmacies, NGOs, and beneficiaries
+* 📍 Supporting location-based medicine matching
+* 🔐 Improving verification and transparency
+* 🤖 Applying AI-assisted processing to medicine and prescription information
+* 📦 Exploring smart CuraBox kiosks for community-level distribution
+
+CuraShare's long-term vision is to build a **technology-enabled medicine redistribution network** that makes eligible surplus medicines more accessible to communities in need.
+
+---
+
+## ⚠️ Project Status
+
+CuraShare is a **prototype / development project** demonstrating the proposed medicine redistribution workflow and user experience.
+
+Some capabilities, including AI processing, external authentication, backend services, real-time tracking, and IoT functionality, may require additional API, database, hardware, or cloud configuration for full production deployment.
+
+The platform is **not intended to replace medical professionals, pharmacists, or regulatory authorities**. Medicine eligibility, prescription validation, and final distribution should remain subject to appropriate professional and regulatory verification.
+
+---
+
+## 📜 License
+
+This project is intended for educational, research, hackathon, and prototype development purposes.
